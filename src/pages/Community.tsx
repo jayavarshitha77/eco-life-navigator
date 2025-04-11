@@ -111,7 +111,7 @@ Has anyone else found creative ways to exercise sustainably?`,
       location: 'Munich, Germany'
     },
     date: '3 weeks ago',
-    title: 'Our family's journey to reduce our carbon footprint by 50%',
+    title: "Our family's journey to reduce our carbon footprint by 50%",
     content: `Last year, my family of four calculated our carbon footprint and were shocked to discover it was well above the global average. We committed to cutting it in half, and I'm proud to say we've achieved our goal! Here's what worked for us:
 
 1. Switched to a renewable energy provider

@@ -32,7 +32,7 @@ const foodDatabase: FoodItem[] = [
   { name: 'Apples (1 medium)', calories: 95, carbonFootprint: 0.08, category: 'Fruits', origin: 'Local', sustainabilityTip: 'Local, seasonal apples have a very low carbon footprint.' },
   { name: 'Bananas (1 medium)', calories: 105, carbonFootprint: 0.12, category: 'Fruits', origin: 'Imported', sustainabilityTip: 'Though imported, bananas are shipped rather than flown, keeping their footprint relatively low.' },
   { name: 'Strawberries (100g)', calories: 32, carbonFootprint: 0.15, category: 'Fruits', origin: 'Local Seasonal', sustainabilityTip: 'Only eat strawberries when in season locally.' },
-  { name: 'Oranges (1 medium)', calories: 62, carbonFootprint: 0.11, category: 'Fruits', origin: 'Regional', sustainabilityTip: 'Oranges ship well and don't require refrigeration during transport.' },
+  { name: 'Oranges (1 medium)', calories: 62, carbonFootprint: 0.11, category: 'Fruits', origin: 'Regional', sustainabilityTip: "Oranges ship well and don't require refrigeration during transport." },
   { name: 'Avocado (1/2 fruit)', calories: 120, carbonFootprint: 0.28, category: 'Fruits', origin: 'Imported', sustainabilityTip: 'Avocados are water-intensive; enjoy occasionally rather than daily.' },
 
   // Grains
@@ -241,7 +241,7 @@ const CalorieCalculator = () => {
 
   // Carbon footprint assessment
   const getCarbonAssessment = () => {
-    if (totalCarbon === 0) return { color: 'text-gray-500', message: 'Add foods to see your meal\'s carbon footprint' };
+    if (totalCarbon === 0) return { color: 'text-gray-500', message: "Add foods to see your meal's carbon footprint" };
     
     if (totalCarbon < 0.5) {
       return { color: 'text-green-600', message: 'Very Low Impact - Excellent eco-friendly meal choice!' };

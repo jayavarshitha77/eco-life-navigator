@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -64,7 +63,7 @@ const FitnessRecommendations = () => {
           },
           {
             name: 'Outdoor Yoga',
-            description: 'Basic yoga poses like downward dog, child's pose, and warrior pose in an outdoor setting.',
+            description: "Basic yoga poses like downward dog, child's pose, and warrior pose in an outdoor setting.",
             duration: '15 minutes',
             difficulty: 'Beginner',
             impact: 'Very low impact',
