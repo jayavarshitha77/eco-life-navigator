@@ -1,8 +1,14 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, TreeDeciduous } from 'lucide-react';
+import { Menu, X, TreeDeciduous, ChevronDown } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +34,32 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            {navLinks.map((link) => (
+            {/* Home Link */}
+            <Link 
+              to="/"
+              className="px-3 py-2 rounded-md hover:bg-eco-600 transition-colors"
+            >
+              Home
+            </Link>
+            
+            {/* Features Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="px-3 py-2 rounded-md hover:bg-eco-600 transition-colors flex items-center gap-1 focus:outline-none">
+                Features <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white text-gray-800">
+                {navLinks.slice(1).map((link) => (
+                  <DropdownMenuItem key={link.title} className="cursor-pointer">
+                    <Link to={link.href} className="w-full px-2 py-1">
+                      {link.title}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            {/* Quick Links */}
+            {navLinks.slice(1, 4).map((link) => (
               <Link 
                 key={link.title}
                 to={link.href}
