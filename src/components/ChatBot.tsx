@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Bot, Send, X, User, Bot as BotIcon } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 // Message type definition
 type Message = {
@@ -93,14 +94,21 @@ const ChatBot = () => {
 
   return (
     <>
-      {/* Floating chat button */}
-      <Button
-        className="fixed bottom-4 right-4 rounded-full p-3 w-12 h-12 flex items-center justify-center bg-eco-500 hover:bg-eco-600 shadow-lg"
-        onClick={() => setIsOpen(true)}
-        aria-label="Open chat"
-      >
-        <BotIcon className="h-6 w-6" />
-      </Button>
+      {/* Floating chat button with popover */}
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button
+            className="fixed bottom-4 right-4 rounded-full p-3 w-12 h-12 flex items-center justify-center bg-eco-500 hover:bg-eco-600 shadow-lg"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open chat"
+          >
+            <BotIcon className="h-6 w-6" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-60 text-sm p-3" side="left" sideOffset={5}>
+          <p>Ask EcoBot for sustainable living tips, eco-friendly diet plans, and waste reduction advice!</p>
+        </PopoverContent>
+      </Popover>
 
       {/* Chat dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

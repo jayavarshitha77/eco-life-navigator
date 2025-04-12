@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,17 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Typing animation for chat */
+.typing-dot {
+  @apply w-2 h-2 rounded-full bg-gray-400 animate-pulse;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
 }
