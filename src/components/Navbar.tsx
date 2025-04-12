@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, TreeDeciduous, ChevronDown } from 'lucide-react';
+import { Menu, X, TreeDeciduous, ChevronDown, LogIn, UserPlus } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
   DropdownMenu,
@@ -68,6 +68,24 @@ const Navbar = () => {
                 {link.title}
               </Link>
             ))}
+            
+            {/* Auth Links */}
+            <div className="flex items-center ml-4 space-x-2">
+              <Link 
+                to="/login" 
+                className="flex items-center gap-1 px-3 py-2 rounded-md hover:bg-eco-600 transition-colors"
+              >
+                <LogIn className="h-4 w-4" />
+                Login
+              </Link>
+              <Link 
+                to="/signup" 
+                className="flex items-center gap-1 px-3 py-2 bg-white text-eco-600 rounded-md hover:bg-gray-100 transition-colors"
+              >
+                <UserPlus className="h-4 w-4" />
+                Sign Up
+              </Link>
+            </div>
           </div>
           
           {/* Mobile Navigation */}
@@ -93,6 +111,24 @@ const Navbar = () => {
                       {link.title}
                     </Link>
                   ))}
+                  <div className="pt-4 border-t border-eco-400">
+                    <Link
+                      to="/login"
+                      className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-eco-600 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <LogIn className="h-5 w-5" />
+                      Login
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="flex items-center gap-2 px-3 py-2 mt-2 bg-white text-eco-600 rounded-md hover:bg-gray-100 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <UserPlus className="h-5 w-5" />
+                      Sign Up
+                    </Link>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

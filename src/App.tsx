@@ -11,6 +11,8 @@ import DietPlanner from "./pages/DietPlanner";
 import FitnessRecommendations from "./pages/FitnessRecommendations";
 import CalorieCalculator from "./pages/CalorieCalculator";
 import Community from "./pages/Community";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/fitness" element={<FitnessRecommendations />} />
           <Route path="/calorie-calculator" element={<CalorieCalculator />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
